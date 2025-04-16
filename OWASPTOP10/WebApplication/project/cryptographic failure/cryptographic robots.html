@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Page</title>
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: left;
+            padding: 50px;
+        }
+        pre {
+            text-align: left;
+            display: inline-block;
+            background-color: #222;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>robotS.txt</h1>
+    <pre>
+
+User-agent: enthiran
+Disallow: /admin/
+Disallow: /users/
+Disallow: /downloads/
+Disallow: /.data.txt
+Disallow: /./hash.txt
+Disallow: /nonsvn/
+Disallow: /webview/
+Disallow: /support/agent/
+Disallow: /*/tag-*
+Disallow: /*?*q=
+Disallow: /*?*%2525*
+Allow: /home/
+Allow: /login/
+    </pre>
+</body>
+</html>

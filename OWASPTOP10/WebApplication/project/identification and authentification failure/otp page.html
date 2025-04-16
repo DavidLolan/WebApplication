@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1e1e2e;
+            color: white;
+            padding: 50px;
+        }
+        .url-bar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .url-bar {
+            width: 70%;
+            background-color: #2e2e3e;
+            padding: 10px;
+            border-radius: 25px;
+            border: 2px solid transparent;
+            text-align: left;
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: border 0.3s ease-in-out;
+        }
+        .url-bar:hover, .url-bar:focus {
+            border: 2px solid #C92228;
+        }
+        .search-button {
+            background-color: #C92228;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .search-button:hover {
+            background-color: #C92228;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #2e2e3e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .otp-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .otp-input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            text-align: left;
+            font-size: 16px;
+            background-color: #fff;
+            color: black;
+        }
+        .countdown {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #d3d3d3;
+            font-size: 14px;
+            pointer-events: none;
+        }
+        button {
+            background-color:  #C92228;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #C92228;
+        }
+        .status-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #de8d8d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    
+        }
+        .status-box:hover {
+            border: 2px solid red;
+            box-shadow: 0px 0px 8px red;
+        }
+    </style>
+</head>
+<body>
+    <div class="status-box" id="statusBox">
+        Not Solved
+    </div>
+
+   
+    <div class="url-bar-container">
+        <input type="text" class="url-bar" id="urlInput" value="https://www.pinterest.com/otp-verification">
+        <button class="search-button" onclick="searchURL()">Search</button>
+    </div>
+
+  
+    <div class="container">
+        <h2>OTP Sent for Verification</h2>
+        <p>Enter the OTP sent to your registered mobile/email.</p>
+        <form action="dashboard.html" method="POST">
+            <div class="otp-container">
+                <span class="premium">Resend Otp</span>
+                <input type="text" name="otp" id="otpInput" class="otp-input" placeholder="Enter OTP" required>
+                <span id="countdown" class="countdown">59s</span>
+            </div>
+            <button type="submit">Verify OTP</button>
+        </form>
+    </div>
+
+    <script>
+        function searchURL() {
+            let urlInput = document.getElementById("urlInput");
+            let newUrl = "https://pinterest.com/my-account";
+
+            
+            urlInput.value = newUrl;
+
+            
+            setTimeout(() => {
+                window.location.href = "file:///var/www/html/OWASPTOP10/WebApplication/project/identification%20and%20authentification%20failure/congrates.html"
+            }, 1000);
+        }
+
+        let countdown = 59;
+        let countdownElement = document.getElementById("countdown");
+
+        function startCountdown() {
+            let interval = setInterval(() => {
+                countdownElement.innerText = countdown + "s";
+                countdown--;
+
+                if (countdown < 0) {
+                    clearInterval(interval);
+                    countdownElement.innerText = "0s"; 
+                }
+            }, 1000);
+        }
+
+        window.onload = startCountdown;
+    </script>
+</body>
+</html>

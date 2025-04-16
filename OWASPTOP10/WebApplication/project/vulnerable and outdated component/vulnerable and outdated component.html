@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dae0e6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar {
+            background-color: #ff4500;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .navbar input {
+            width: 300px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .main-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .posts {
+            width: 70%;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .post {
+            background: white;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .post h3 {
+            margin: 0;
+            color: #ff4500;
+        }
+
+        .sidebar {
+            width: 30%;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            margin-left: 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .category {
+            padding: 8px;
+            background: #f6f7f8;
+            margin-bottom: 5px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .category:hover {
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>Reddit</h1>
+        <input type="text" placeholder="Search Reddit">
+    </div>
+
+    <div class="main-container">
+        
+        <div class="posts">
+            <div class="post">
+                <h3>🔥 Trending Post: AI Breakthrough!</h3>
+                <p>Scientists have developed a new AI model that can learn like humans...</p>
+            </div>
+
+            <div class="post">
+                <h3>🎮 New Game Release</h3>
+                <p>The latest open-world adventure game is taking over the charts...</p>
+            </div>
+
+            <div class="post">
+                <h3>📜 Today I Learned</h3>
+                <p>Did you know honey never spoils? Archaeologists found 3000-year-old honey...</p>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h2>Popular Subreddits</h2>
+            <div class="category">r/technology</div>
+            <div class="category">r/gaming</div>
+            <div class="category">r/worldnews</div>
+            <div class="category">r/funny</div>
+            <div class="category">r/science</div>
+        </div>
+
+    </div>
+
+</body>
+</html>

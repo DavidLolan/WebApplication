@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canara Bank</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1e1e2e;
+            color: white;
+            padding: 50px;
+        }
+        .url-bar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .url-bar {
+            width: 70%;
+            background-color: #2e2e3e;
+            padding: 10px;
+            border-radius: 25px;
+            border: 2px solid transparent;
+            text-align: left;
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: border 0.3s ease-in-out;
+        }
+        .url-bar:hover, .url-bar:focus {
+            border: 2px solid #4caf50;
+        }
+        .search-button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .search-button:hover {
+            background-color: #45a049;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: #2e2e3e;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .navbar a:hover {
+            background: #4caf50;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #2e2e3e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        
+        .status-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #de8d8d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .status-box:hover {
+            border: 2px solid red;
+            box-shadow: 0px 0px 8px red;
+        }
+
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .solved {
+            background: #4caf50 !important;
+            border: 2px solid #4caf50 !important;
+            box-shadow: 0px 0px 8px #4caf50 !important;
+            animation: blink 1s infinite;
+        }
+
+        
+        .congrats-form {
+            display: none;
+            margin-top: 20px;
+            background: #4caf50;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="url-bar-container">
+        <input type="text" class="url-bar" id="urlInput" value="https://internet-banking.com/home/user=4321?">
+        <button class="search-button" onclick="searchURL()">Search</button>
+    </div>
+
+    <div class="status-box" id="statusBox">
+        Not Solved
+    </div>
+
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Profile</a>
+        <a href="#">Fund Transfer</a>
+        <a href="#">NRI</a>
+        <a href="#">Credit Card</a>
+        <a href="#">Debit Card</a>
+    </div>
+
+    <div class="container">
+        <h2>Welcome to Internet Banking</h2>
+        <p>Select an option from the navigation bar to proceed.</p>
+    </div>
+
+    <div class="congrats-form" id="congratsForm">
+        🎉 Congratulations! You have successfully completed the challenge! 🎉
+    </div>
+
+    <script>
+        function searchURL() {
+            let urlInput = document.getElementById("urlInput");
+            let statusBox = document.getElementById("statusBox");
+            let congratsForm = document.getElementById("congratsForm");
+
+           
+            if (urlInput.value.startsWith("https://internet-banking.com/home/user=")) {
+                statusBox.innerText = "Solved";
+                statusBox.classList.add("solved");
+                
+               
+                setTimeout(() => {
+                    congratsForm.style.display = "block";
+                }, 1000);
+            }
+        }
+    </script>
+
+</body>
+</html>
