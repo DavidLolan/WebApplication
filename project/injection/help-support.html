@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>help-support</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffffff;
+            color: black;
+            padding: 50px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #00b5ef;
+            color: black;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .help-support-form {
+            margin-top: 20px;
+        }
+
+        .help-support-form input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s ease-in-out;
+        }
+
+        .help-support-form input:hover, .help-support-form input:focus {
+            border: 2px solid #00b5ef;
+        }
+
+        .help-support-form button {
+            background-color: #00b5ef;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .help-support-form button:hover {
+            background-color: #45a049;
+        }
+
+        .hidden-credentials {
+            display: none;
+            margin-top: 20px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            color: red;
+            font-weight: bold;
+            border: 2px solid red;
+        }
+        .logo-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .logo-container img {
+            width: 100px;
+            height: auto;
+        }
+
+        .url-bar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .url-bar {
+            width: 70%;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 25px;
+            border: 2px solid #00b5ef;
+            text-align: left;
+            color: black;
+            font-size: 16px;
+            outline: none;
+            transition: border 0.3s ease-in-out;
+        }
+
+        .url-bar:hover, .url-bar:focus {
+            border: 2px solid #00b5ef;
+        }
+
+        .search-button {
+            background-color: #00b5ef;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .search-button:hover {
+            background-color: #45a049;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #00b5ef;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .navbar a:hover {
+            background: #00b5ef;
+            color: white;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #00b5ef;
+            color: black;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+        .solved-msg {
+      
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #28a745; 
+            color: white; 
+            padding: 30px 50px; 
+            border-radius: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            opacity: 0;
+            z-index: 999;
+            pointer-events: none;  
+            animation: fadeInOut 4s ease-in-out forwards; 
+            box-shadow: 0 0 20px #28a745;
+            display: none;
+    }
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+      20% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+      50% { transform: translate(-50%, -50%) scale(1); }
+      80% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="C:\Users\hisham mirsa m\project\injection\sbi-logo-33219.png" alt="SBI Logo">
+    </div>
+
+    <div class="url-bar-container">
+        <input type="text" class="url-bar" id="urlInput" value="https://retail.onlinesbi.sbi/home/Jerome/user372638/Help-Support">
+        <button class="search-button">Search</button>
+    </div>
+    <div class="container">
+       
+       
+    </div>
+    <div class="container">
+        <p>Select an option from the navigation bar to proceed.</p>
+
+        <form class="help-support-form" onsubmit="return checkInjection(event)">
+            <input type="text" id="issueInput" placeholder="Enter your issue" required>
+            <input type="email" id="emailInput" placeholder="Enter your email" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="hidden-credentials" id="credentials">
+            <p>bilal_user01 : Bilal@1234
+                jerome_admin02 : Jerome!987
+                abhishek_test03 : Abhi@5678
+                hisham_guest04 : Hisham#2024
+                alvin_banking05 : Alvin@Bank
+                shinan_secure06 : Shinan$Safe!
+                mohammed_hacker07 : Moha#321
+                arjun_root08 : Arjun!Access
+                ravi_finance09 : Ravi$Flow123
+                rahul_manager10 : Rahul#Manager
+                farhan_user11 : Farhan@Pass123
+                dinesh_banker12 : Dinesh!987
+                vishal_test13 : Vishal@Bank2024
+                adnan_savings14 : Adnan#1000
+                akash_vault15 : Akash$Access
+                sandeep_security16 : Sandeep!2025
+                yusuf_customer17 : Yusuf@Pass
+                pranav_employee18 : Pranav#Secure
+                naveen_atm19 : Naveen#PIN4567
+                joseph_card20 : Joseph$Holder
+                gokul_transfer21 : Gokul!789
+                manoj_account22 : Manoj@Acct2023
+                harsh_credentials23 : Harsh#Login
+                sahil_online24 : Sahil$Banking
+                shivam_hacker25 : Shivam@Me123
+                sunil_fraud26 : Sunil!2024
+                kishore_access27 : Kishore#2025
+                pavan_banking28 : Pavan#Bank
+                daniel_support29 : Daniel$Help987
+                tarun_user30 : Tarun!Pass789
+                suhail_branch31 : Suhail$Code
+                ajith_safe32 : Ajith#Entry99
+                pradeep_test33 : Pradeep$Account
+                sagar_stealth34 : Sagar!Bank
+                rehan_backdoor35 : Rehan$Admin
+                aravind_db36 : Aravind#DB567
+                jatin_vault37 : Jatin$Sec123
+                vikram_admin38 : Vikram#Admin
+                sudhir_pass39 : Sudhir@Pass99
+                tauseef_deposit40 : Tauseef#1234
+                nizam_funds41 : Nizam$Move
+                haresh_withdraw42 : Haresh@999
+                mustafa_safe43 : Mustafa#Protect
+                bobby_login44 : Bobby$Try123
+                ashwin_key45 : Ashwin#Secure99
+                rupesh_root46 : Rupesh@Banking
+                imran_sql47 : Imran!Inject987
+                charan_mule48 : Charan#Cash789
+                naeem_secure49 : Naeem$Safe99
+                rajat_bypass50 : Rajat@Bypass99
+                </p>
+        </div>
+    </div>
+    
+    <div class="solved-msg" id="solvedMessage">🎉 Lab Solved! 🎉</div>
+
+    <script>
+        function checkInjection(event) {
+            event.preventDefault();
+            let issueInput = document.getElementById("issueInput").value;
+            let emailInput = document.getElementById("emailInput").value;
+            let credentials = document.getElementById("credentials");
+            
+            let injectionPatterns = [/('|"|;|--|\bOR\b|\bAND\b|\bSELECT\b|\bINSERT\b|\bUPDATE\b|\bDELETE\b|\bDROP\b|\bUNION\b|\bXP_\b|\bEXEC\b|\bWAITFOR\b)/i];
+            
+            if (injectionPatterns.some(pattern => pattern.test(issueInput))) {      
+                credentials.style.display = "block";     
+                solvedMessage.style.display = "block";      
+                // Trigger reflow to restart animation       
+                solvedMessage.classList.remove("solved-msg");       
+                void solvedMessage.offsetWidth;       
+                solvedMessage.classList.add("solved-msg");
+      
+            }
+            }
+        
+        
+    </script>
+</body>
+</html>

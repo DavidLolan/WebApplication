@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon Pay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1e1e2e;
+            color: white;
+            padding: 50px;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: #2e2e3e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .logo img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #ffffff;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], input[type="password"], input[type="email"], input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 15px;
+            background: #ffffff;
+        }
+        input[type="submit"] {
+            background: #FFD814;
+            color: black;
+            padding: 12px 15px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background: #FFC107;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        .success {
+            color: green;
+            margin-top: 10px;
+        }
+        .status-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #de8d8d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .status-box:hover {
+            border: 2px solid red;
+            box-shadow: 0px 0px 8px red;
+        }
+
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Pay">
+    </div>
+    <div class="status-box" id="statusBox">
+        Not Solved
+    </div>
+
+
+    <h2>Amazon Pay - Secure Login</h2>
+
+    <!-- Login Form -->
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <div id="loginResult" class="error"></div>
+
+    <!-- Password Reset -->
+    <form id="resetForm" style="margin-top: 30px;">
+        <label for="email">Reset Password (Email):</label>
+        <input type="email" id="email" name="email" required>
+
+        <input type="submit" value="Reset Password">
+    </form>
+
+    <div id="resetResult" class="success"></div>
+
+    <!-- File Upload -->
+    <form id="uploadForm" enctype="multipart/form-data" style="margin-top: 30px;">
+        <label for="file">Upload Profile Picture:</label>
+        <input type="file" id="file" name="file" required>
+
+        <input type="submit" value="Upload">
+    </form>
+
+    <div id="uploadResult" class="error"></div>
+</div>
+
+<script>
+    // --- Login Form ---
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        let username = document.getElementById('username').value;
+        let password = document.getElementById('password').value;
+
+        if (username === 'admin' && password === 'password123') {
+            alert('Login successful! Welcome Admin!');
+        } else {
+            document.getElementById('loginResult').innerText = 'Invalid credentials!';
+        }
+    });
+
+    // --- Password Reset Form ---
+    document.getElementById('resetForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        let email = document.getElementById('email').value;
+        let resetToken = 'reset12345'; // Hardcoded token
+
+        let resetLink = `file:///C:/Users/hisham%20mirsa%20m/project/Insecure%20Design/insecure%20design%20password.html`;
+        document.getElementById('resetResult').innerHTML = `
+            <p>Password reset link: <a href="${resetLink}" target="_blank">${resetLink}</a></p>
+        `;
+    });
+
+    // --- File Upload Form ---
+    document.getElementById('uploadForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        let file = document.getElementById('file').files[0];
+
+        if (file) {
+            document.getElementById('uploadResult').innerText = `File ${file.name} uploaded successfully!`;
+        } else {
+            document.getElementById('uploadResult').innerText = 'Error uploading file!';
+        }
+    });
+
+    console.log('Amazon Pay - System Running...');
+</script>
+
+</body>
+</html>
